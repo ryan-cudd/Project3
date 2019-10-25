@@ -30,6 +30,10 @@ public class DateTimeOne extends MesoDateTimeOneAbstract
 	public long getCurrentMinutes() {
 		return getMinutes() % MINUTE_AND_HOUR_CONVERSION;
 	}
+	
+	public long getCurrentHours() {
+		return getHours() % 24;
+	}
 
 	@Override
 	void dateTimeNow() {
@@ -38,8 +42,12 @@ public class DateTimeOne extends MesoDateTimeOneAbstract
 	}
 
 	@Override
-	void sleepForFiveSec() {
-		// TODO Auto-generated method stub
+	void sleepForFiveSec(){
+		try{
+			Thread.sleep(5000);
+		}
+		catch (InterruptedException e) {
+		}
 		
 	}
 
