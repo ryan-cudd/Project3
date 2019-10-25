@@ -1,23 +1,26 @@
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class DateTimeOne extends MesoDateTimeOneAbstract
 {
 	
-	private LocalDateTime localDate;
+	private Date date;
 	
 	public DateTimeOne() {
-		localDate = LocalDateTime.now();
+		date = new Date();
 	}
 	
 	@Override
 	int getValueOfSecond() {
-		return localDate.getSecond();
+		return date.getSeconds();
 	}
 
 	@Override
 	void dateTimeNow() {
-		// TODO Auto-generated method stub
-		
+		SimpleDateFormat dateFormat = new SimpleDateFormat("month/day/year hour:minute am/pm");
+		System.out.println("Current Date/Time: " + );
 	}
 
 	@Override
