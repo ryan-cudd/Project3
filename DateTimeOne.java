@@ -58,7 +58,8 @@ public class DateTimeOne extends MesoDateTimeOneAbstract
 	void timeZoneHashMap() {
 		SimpleDateFormat dateFormat1 = new SimpleDateFormat("MM/dd/YYYY HH:mm");
 		SimpleDateFormat dateFormat3 = new SimpleDateFormat("MM/dd/YYYY HH:mm");
-		SimpleDateFormat dateFormat5 = new SimpleDateFormat("YYYY-MM-dd HH:mm");
+		SimpleDateFormat dateFormat5 = new SimpleDateFormat("YYYY-MM-dd");
+		SimpleDateFormat dateFormat5pt2 = new SimpleDateFormat("HH:mm");
 		
 		Calendar tempCal = (Calendar) calendar.clone();
 		tempCal.add(Calendar.HOUR_OF_DAY, 14);
@@ -108,7 +109,29 @@ public class DateTimeOne extends MesoDateTimeOneAbstract
 		System.out.println(dateFormat1.format(tempCal.getTime()));
 		dateHash.put("ZST", dateFormat1.format(tempCal.getTime()));
 		
-		System.out.println(calendar.getTime());
+		System.out.println("Print Style 3: Final Sorted Array:");
+		tempCal = (Calendar) calendar.clone();
+		tempCal.add(Calendar.HOUR_OF_DAY, 14);
+		System.out.println(dateFormat5.format(tempCal.getTime()) + "T" + dateFormat5pt2.format(tempCal.getTime()));
+		dateHash.put("AST", dateFormat5.format(tempCal.getTime()));
+		
+		tempCal = (Calendar) calendar.clone();
+		tempCal.add(Calendar.HOUR_OF_DAY, 12);
+		System.out.println(dateFormat5.format(tempCal.getTime()) + "T" + dateFormat5pt2.format(tempCal.getTime()));
+		dateHash.put("BST", dateFormat5.format(tempCal.getTime()));
+		
+		System.out.println(dateFormat5.format(calendar.getTime()) + "T" + dateFormat5pt2.format(calendar.getTime()));
+		dateHash.put("CST", dateFormat5.format(calendar.getTime()));
+		
+		tempCal = (Calendar) calendar.clone();
+		tempCal.add(Calendar.HOUR_OF_DAY, 6);
+		System.out.println(dateFormat5.format(tempCal.getTime()) + "T" + dateFormat5pt2.format(tempCal.getTime()));
+		dateHash.put("GMT", dateFormat5.format(tempCal.getTime()));
+		
+		tempCal = (Calendar) calendar.clone();
+		tempCal.add(Calendar.HOUR_OF_DAY, -5);
+		System.out.println(dateFormat5.format(tempCal.getTime()) + "T" + dateFormat5pt2.format(tempCal.getTime()));
+		dateHash.put("ZST", dateFormat5.format(tempCal.getTime()));
 	}
 	
    
