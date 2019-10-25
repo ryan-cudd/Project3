@@ -1,15 +1,16 @@
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.HashMap;
 
 public class DateTimeOne extends MesoDateTimeOneAbstract
 {
 	
 	private Date date;
+	private HashMap<String, String> dateHash;
 	
 	public DateTimeOne() {
 		date = new Date();
+		dateHash = new HashMap<String, String>();
 	}
 	
 	@Override
@@ -19,8 +20,8 @@ public class DateTimeOne extends MesoDateTimeOneAbstract
 
 	@Override
 	void dateTimeNow() {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("month/day/year hour:minute am/pm");
-		System.out.println("Current Date/Time: " + );
+		SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/YYYY HH:mm a");
+		System.out.println("Current Date/Time: " + dateFormat.format(date.getTime()));
 	}
 
 	@Override
@@ -36,6 +37,11 @@ public class DateTimeOne extends MesoDateTimeOneAbstract
 	@Override
 	void dateTimeOfOtherCity() {
 		// TODO Auto-generated method stub
+		SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
+		System.out.print("Time on Server: " + dateFormat.format(date.getTime()) + "\n");
+		System.out.println("GMT: " + (date.getHours() + 6)%24 +":" + date.getMinutes());
+		System.out.println("BST (90E): " + (date.getHours() + 12)%24 +":" + date.getMinutes());
+		System.out.println("CST (90W): " + date.getHours() + ":" + date.getMinutes());
 		
 	}
 
