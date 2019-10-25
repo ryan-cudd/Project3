@@ -1,4 +1,5 @@
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -6,11 +7,13 @@ public class DateTimeOne extends MesoDateTimeOneAbstract
 {
 	
 	private Date date;
+	private Calendar calendar;
 	private HashMap<String, String> dateHash;
 	
 	public DateTimeOne() {
 		date = new Date();
 		dateHash = new HashMap<String, String>();
+		calendar = Calendar.getInstance();
 	}
 	
 	@Override
@@ -53,8 +56,14 @@ public class DateTimeOne extends MesoDateTimeOneAbstract
 
 	@Override
 	void timeZoneHashMap() {
-		// TODO Auto-generated method stub
+		SimpleDateFormat dateFormat1 = new SimpleDateFormat("MM/dd/YYYY HH:mm");
+		SimpleDateFormat dateFormat3 = new SimpleDateFormat("MM/dd/YYYY HH:mm");
+		SimpleDateFormat dateFormat5 = new SimpleDateFormat("YYYY-MM-ddTHH:mm");
+		Calendar tempCal = calendar;
+		tempCal.add(Calendar.HOUR_OF_DAY, 14);
 		
 	}
+	
+	
    
 }
