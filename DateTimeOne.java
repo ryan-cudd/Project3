@@ -1,38 +1,17 @@
+import java.time.LocalDateTime;
 
 public class DateTimeOne extends MesoDateTimeOneAbstract
 {
 	
-	private static final int MINUTE_AND_HOUR_CONVERSION = 60;
-	private static final long MILLI_CONVERSION = 1000;
-	private long milliSeconds;
+	private LocalDateTime localDate;
 	
 	public DateTimeOne() {
-		milliSeconds = System.currentTimeMillis();
-	}
-	
-	public long getSeconds() {
-		return milliSeconds / MILLI_CONVERSION;
+		localDate = LocalDateTime.now();
 	}
 	
 	@Override
 	int getValueOfSecond() {
-		return (int) (getSeconds() % MINUTE_AND_HOUR_CONVERSION);
-	}
-	
-	public long getMinutes() {
-		return getSeconds() / MINUTE_AND_HOUR_CONVERSION;
-	}
-	
-	public long getHours() {
-		return getMinutes() / MINUTE_AND_HOUR_CONVERSION;
-	}
-	
-	public long getCurrentMinutes() {
-		return getMinutes() % MINUTE_AND_HOUR_CONVERSION;
-	}
-	
-	public long getCurrentHours() {
-		return getHours() % 24;
+		return localDate.getSecond();
 	}
 
 	@Override
