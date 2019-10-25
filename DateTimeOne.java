@@ -2,6 +2,7 @@
 public class DateTimeOne extends MesoDateTimeOneAbstract
 {
 	
+	private static final int MINUTE_AND_HOUR_CONVERSION = 60;
 	private static final long MILLI_CONVERSION = 1000;
 	private long milliSeconds;
 	
@@ -15,7 +16,19 @@ public class DateTimeOne extends MesoDateTimeOneAbstract
 	
 	@Override
 	int getValueOfSecond() {
-		return (int) (getSeconds() % 60);
+		return (int) (getSeconds() % MINUTE_AND_HOUR_CONVERSION);
+	}
+	
+	public long getMinutes() {
+		return getSeconds() / MINUTE_AND_HOUR_CONVERSION;
+	}
+	
+	public long getHours() {
+		return getMinutes() / MINUTE_AND_HOUR_CONVERSION;
+	}
+	
+	public long getCurrentMinutes() {
+		return getMinutes() % MINUTE_AND_HOUR_CONVERSION;
 	}
 
 	@Override
