@@ -8,11 +8,15 @@ public class DateTimeOne extends MesoDateTimeOneAbstract
 	
 	private Date date;
 	private Calendar calendar;
-	private HashMap<String, String> dateHash;
+	private HashMap<String, String> dateHash1;
+	private HashMap<String, String> dateHash2;
+	private HashMap<String, String> dateHash3;
 	
 	public DateTimeOne() {
 		date = new Date();
-		dateHash = new HashMap<String, String>();
+		dateHash1 = new HashMap<String, String>();
+		dateHash2 = new HashMap<String, String>();
+		dateHash3 = new HashMap<String, String>();
 		calendar = Calendar.getInstance();
 	}
 	
@@ -65,73 +69,73 @@ public class DateTimeOne extends MesoDateTimeOneAbstract
 		tempCal.add(Calendar.HOUR_OF_DAY, 14);
 		System.out.println("Print Style 1:");
 		System.out.println("AST " + dateFormat1.format(tempCal.getTime()));
-		dateHash.put("AST", dateFormat1.format(tempCal.getTime()));
+		dateHash1.put("AST", dateFormat1.format(tempCal.getTime()));
 		
 		tempCal = (Calendar) calendar.clone();
 		tempCal.add(Calendar.HOUR_OF_DAY, 12);
 		System.out.println("BST " + dateFormat1.format(tempCal.getTime()));
-		dateHash.put("BST", dateFormat1.format(tempCal.getTime()));
+		dateHash1.put("BST", dateFormat1.format(tempCal.getTime()));
 		
 		System.out.println("CST " + dateFormat1.format(calendar.getTime()));
-		dateHash.put("CST", dateFormat1.format(calendar.getTime()));
+		dateHash1.put("CST", dateFormat1.format(calendar.getTime()));
 		
 		tempCal = (Calendar) calendar.clone();
 		tempCal.add(Calendar.HOUR_OF_DAY, 6);
 		System.out.println("GMT " + dateFormat1.format(tempCal.getTime()));
-		dateHash.put("GMT", dateFormat1.format(tempCal.getTime()));
+		dateHash1.put("GMT", dateFormat1.format(tempCal.getTime()));
 		
 		tempCal = (Calendar) calendar.clone();
 		tempCal.add(Calendar.HOUR_OF_DAY, -5);
 		System.out.println("ZST " + dateFormat1.format(tempCal.getTime()));
-		dateHash.put("ZST", dateFormat1.format(tempCal.getTime()));
+		dateHash1.put("ZST", dateFormat1.format(tempCal.getTime()));
 		
 		
 		tempCal.add(Calendar.HOUR_OF_DAY, 14);
 		System.out.println("Print Style 2:");
 		System.out.println(dateFormat1.format(tempCal.getTime()));
-		dateHash.put("AST", dateFormat1.format(tempCal.getTime()));
+		dateHash2.put("AST", dateFormat1.format(tempCal.getTime()));
 		
 		tempCal = (Calendar) calendar.clone();
 		tempCal.add(Calendar.HOUR_OF_DAY, 12);
 		System.out.println(dateFormat1.format(tempCal.getTime()));
-		dateHash.put("BST", dateFormat1.format(tempCal.getTime()));
+		dateHash2.put("BST", dateFormat1.format(tempCal.getTime()));
 		
 		System.out.println(dateFormat1.format(calendar.getTime()));
-		dateHash.put("CST", dateFormat1.format(calendar.getTime()));
+		dateHash2.put("CST", dateFormat1.format(calendar.getTime()));
 		
 		tempCal = (Calendar) calendar.clone();
 		tempCal.add(Calendar.HOUR_OF_DAY, 6);
 		System.out.println(dateFormat1.format(tempCal.getTime()));
-		dateHash.put("GMT", dateFormat1.format(tempCal.getTime()));
+		dateHash2.put("GMT", dateFormat1.format(tempCal.getTime()));
 		
 		tempCal = (Calendar) calendar.clone();
 		tempCal.add(Calendar.HOUR_OF_DAY, -5);
 		System.out.println(dateFormat1.format(tempCal.getTime()));
-		dateHash.put("ZST", dateFormat1.format(tempCal.getTime()));
+		dateHash2.put("ZST", dateFormat1.format(tempCal.getTime()));
 		
 		System.out.println("Print Style 3: Final Sorted Array:");
 		tempCal = (Calendar) calendar.clone();
 		tempCal.add(Calendar.HOUR_OF_DAY, 14);
 		System.out.println(dateFormat5.format(tempCal.getTime()) + "T" + dateFormat5pt2.format(tempCal.getTime()));
-		dateHash.put("AST", dateFormat5.format(tempCal.getTime()));
+		dateHash3.put("AST", dateFormat5.format(tempCal.getTime()));
 		
 		tempCal = (Calendar) calendar.clone();
 		tempCal.add(Calendar.HOUR_OF_DAY, 12);
 		System.out.println(dateFormat5.format(tempCal.getTime()) + "T" + dateFormat5pt2.format(tempCal.getTime()));
-		dateHash.put("BST", dateFormat5.format(tempCal.getTime()));
+		dateHash3.put("BST", dateFormat5.format(tempCal.getTime()));
 		
 		System.out.println(dateFormat5.format(calendar.getTime()) + "T" + dateFormat5pt2.format(calendar.getTime()));
-		dateHash.put("CST", dateFormat5.format(calendar.getTime()));
+		dateHash3.put("CST", dateFormat5.format(calendar.getTime()));
 		
 		tempCal = (Calendar) calendar.clone();
 		tempCal.add(Calendar.HOUR_OF_DAY, 6);
 		System.out.println(dateFormat5.format(tempCal.getTime()) + "T" + dateFormat5pt2.format(tempCal.getTime()));
-		dateHash.put("GMT", dateFormat5.format(tempCal.getTime()));
+		dateHash3.put("GMT", dateFormat5.format(tempCal.getTime()));
 		
 		tempCal = (Calendar) calendar.clone();
 		tempCal.add(Calendar.HOUR_OF_DAY, -5);
 		System.out.println(dateFormat5.format(tempCal.getTime()) + "T" + dateFormat5pt2.format(tempCal.getTime()));
-		dateHash.put("ZST", dateFormat5.format(tempCal.getTime()));
+		dateHash3.put("ZST", dateFormat5.format(tempCal.getTime()));
 	}
 	
    
