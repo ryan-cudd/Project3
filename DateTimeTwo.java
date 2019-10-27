@@ -4,53 +4,51 @@ import java.util.Date;
 public class DateTimeTwo {
 
 	private Calendar calendar;
+	private Date date;
 	public DateTimeTwo() {
 		calendar = Calendar.getInstance();
+		date = new Date();
 	}
 	
 	public void daysOfCurrentMonth() {
 		// TODO Auto-generated method stub
-		Calendar tempCal = (Calendar) calendar.clone();
-		tempCal.set(calendar.get(calendar.YEAR), calendar.get(calendar.MONTH), 10, calendar.get(calendar.HOUR), calendar.get(calendar.MINUTE));		
+		Date tempDate = (Date) date.clone();
+		tempDate.setDate(11);		
 		String tenthDay = "";
 		String eighteenthDay = "";
-		switch (tempCal.DAY_OF_WEEK) {
-		case 1:
+		int dayOfWeek = tempDate.getDay();
+		if (dayOfWeek == 1)
 			tenthDay = "SUNDAY";
-		case 2:
+		if (dayOfWeek == 2)
 			tenthDay = "MONDAY";
-		case 3:
+		if (dayOfWeek == 3)
 			tenthDay ="TUESDAY";
-		case 4:
+		if (dayOfWeek == 4)
 			tenthDay = "WEDNESDAY";
-		case 5:
+		if (dayOfWeek == 5)
 			tenthDay = "THURSDAY";
-		case 6:
+		if (dayOfWeek == 6)
 			tenthDay = "FRIDAY";
-		case 7:
+		if (dayOfWeek == 7)
 			tenthDay = "SATURDAY";
-		}
-		tempCal.set(calendar.get(calendar.YEAR), calendar.get(calendar.MONTH), 18, calendar.get(calendar.HOUR), calendar.get(calendar.MINUTE));
-		System.out.println(calendar.MONTH);
-		System.out.println(tempCal.get(tempCal.DAY_OF_MONTH));
-		System.out.println(tempCal.get(tempCal.DAY_OF_WEEK));
-		eighteenthDay = "ASDAS";
-		switch (tempCal.get(tempCal.DAY_OF_WEEK)) {
-		case 1:
+		
+		tempDate.setDate(19);	
+		
+		dayOfWeek = tempDate.getDay();
+		if (dayOfWeek == 1)
 			eighteenthDay = "SUNDAY";
-		case 2:
+		if (dayOfWeek == 2)
 			eighteenthDay = "MONDAY";
-		case 3:
+		if (dayOfWeek == 3)
 			eighteenthDay ="TUESDAY";
-		case 4:
+		if (dayOfWeek == 4)
 			eighteenthDay = "WEDNESDAY";
-		case 5:
+		if (dayOfWeek == 5)
 			eighteenthDay = "THURSDAY";
-		case 6:
+		if (dayOfWeek == 6)
 			eighteenthDay = "FRIDAY";
-		case 7:
+		if (dayOfWeek == 7)
 			eighteenthDay = "SATURDAY";
-		}
 		System.out.println("The tenth day of the month is " + tenthDay + " and the eighteenth is " + eighteenthDay);
 	}
 
